@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import Message from './Message';
+import PropTypes from 'prop-types';
 
 const generateChatComponents = (messages) => {
   return messages.map((message, i) => {
@@ -23,6 +24,12 @@ const Chat = (props) => {
       {chatComponents}
     </div>
   );
+}
+
+Chat.propTypes = {
+  sender: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  timeStamp: PropTypes.string
 }
 
 export default Chat;
